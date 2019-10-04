@@ -21,11 +21,19 @@ export default createGlobalStyle`
     cursor: pointer;
   }
 
+  .flex {
+    display: flex;
+  }
+
   .bg-primary {
     background: ${props => props.theme.bluePrimary}
   }
 
   .bg-secundary {
     background: ${props => props.theme.blueSecundary}
+  }
+
+  .bold {
+    font-weight: 900;
   }
 `

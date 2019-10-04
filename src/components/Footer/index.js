@@ -7,7 +7,17 @@ export default class index extends Component {
     return (
       <Container className='bg-primary'>
         <Card className='full bg-secundary'>
-          <FaWhatsapp /> Whats App
+          <div className='icon-text'>
+            <FaWhatsapp />
+            <div>
+              <p className='bold'>
+                0800 123 2222
+              </p>
+              <p>
+               Segunda a sexta de 8h às 22h
+              </p>
+            </div>
+          </div>
         </Card>
         <Card className='bg-secundary'>
           <FaRegComments className='full' />
@@ -21,8 +31,8 @@ export default class index extends Component {
           <FaInfoCircle className='full' />
           <span>Ajuda</span>
         </Card>
-        <Card className='full'>
-          Feito com <FaRegHeart /> pela Quero Educação
+        <Card className='full bold'>
+          Feito com <FaRegHeart className='hearth' /> pela Quero Educação
         </Card>
       </Container>
     )
