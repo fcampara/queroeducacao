@@ -1,6 +1,9 @@
 import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
+
+import Routes from './routes'
 
 import { theme } from './styles/colors'
 import GlobalStyle from './styles/global'
@@ -13,9 +16,9 @@ function App () {
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
-        <div className='App'>
-          <h1>Hello world</h1>
-        </div>
+        <BrowserRouter>
+          <Routes />
+        </BrowserRouter>
         <GlobalStyle />
       </ThemeProvider>
     </Provider>
