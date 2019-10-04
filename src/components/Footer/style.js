@@ -1,60 +1,116 @@
 import styled from 'styled-components'
 
 export const Container = styled.footer`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: center;
-  grid-gap: 0.2rem;
-
-  .icon-text {
-    display: flex;
-    justify-content: flex-start;
-
-    svg {
-      font-size: 2.4rem;
-      margin-right: 1rem;
-    }
-
-    div {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    p {
-      margin-top: 0.4rem
-    }
-  }
-
-  .full {
-    grid-column: span 3;
-  }
-
-  svg.full {
-    width: 100%;
-    font-size: 2.4rem;
-    font-weight: 900;
-  }
-`
-export const Card = styled.div`
+  background: ${props => props.theme.bluePrimary};
   display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  height: 100px;
-  color: #fff;
 
-  svg {
-    margin: 5px;
+  .col {
+    height: 100px
   }
 
-  .hearth {
-    font-size: 20px;
+  .row {
+    display: flex!important;
+    flex-direction: column;
+    margin-left: 20px;
   }
 
-  span {
-    font-size: 1.2rem;
-    font-weight: 900;
+  .text {
+    display: none!important;
+  }
+
+  .col:nth-child(1) {
+    flex-basis: 100%;
+    margin-bottom: 1px;
+  }
+
+  .col:nth-child(2) {
+    flex-basis: 33.33%;
+    flex-direction: column;
+  }
+
+  .col:nth-child(3) {
+    margin: 2px;
+    flex-basis: 31.33%;
+    flex-direction: column;
+  }
+
+  .col:nth-child(4) {
+    flex-basis: 33.83%;
+    flex-direction: column;
+  }
+
+  .col:nth-child(5) > svg {
+    font-size: 23px;
+    margin: 0 7px 0 7px;
+  }
+
+  .col > p {
+    margin-top: 10px;
+  }
+
+  svg.large {
+    font-size: 50px;
+  }
+
+  svg.medium {
+    font-size: 25px;
+  }
+
+  @media (min-width: 760px) {
+    .title {
+      display: none;
+    }
+
+    .text {
+      display: flex!important;
+    }
+
+    .col:nth-child(1) {
+      flex-basis: 25%;
+      margin-bottom: 0px;
+      flex-direction: row;
+
+    }
+
+    .col:nth-child(2) {
+      flex-basis: 25%;
+      flex-direction: row;
+    }
+
+    .col:nth-child(3) {
+      margin: 0px;
+      flex-basis: 25%;
+      flex-direction: row;
+    }
+
+    .col:nth-child(4) {
+      flex-basis: 25%;
+      flex-direction: row;
+    }
+  }
+`
+
+export const Card = styled.div`
+  ${props => console.log(props)}
+  display: flex;
+  color: #FFF;
+  align-items: center;
+  justify-content: center;
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+
+    p:first-child {
+      margin-bottom: 5px;
+    }
   }
 `

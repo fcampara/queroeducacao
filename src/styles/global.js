@@ -9,12 +9,16 @@ export default createGlobalStyle`
   }
 
   body {
+    background: ${props => props.theme.background};
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #root {
+    height: 100vh;
     height: 100vh;
     width: 100vw;
     font-family: proxima-nova, Arial, Helvetica, sans-serif;
     color: ${props => props.theme.textColor};
-    background: ${props => props.theme.background};
-    -webkit-font-smoothing: antialiased;
   }
 
   button {
@@ -31,6 +35,10 @@ export default createGlobalStyle`
 
   .bg-secundary {
     background: ${props => props.theme.blueSecundary}
+  }
+
+  .text-white {
+    color: #FFF;
   }
 
   .bold {
