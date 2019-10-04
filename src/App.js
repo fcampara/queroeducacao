@@ -3,6 +3,8 @@ import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 
+import Footer from './components/Footer'
+
 import Routes from './routes'
 
 import { theme } from './styles/colors'
@@ -18,6 +20,7 @@ function App () {
       <ThemeProvider theme={theme}>
         <BrowserRouter>
           <Routes />
+          <Footer />
         </BrowserRouter>
         <GlobalStyle />
       </ThemeProvider>

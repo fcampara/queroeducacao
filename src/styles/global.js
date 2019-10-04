@@ -11,6 +11,7 @@ export default createGlobalStyle`
   body {
     height: 100vh;
     width: 100vw;
+    font-family: proxima-nova, Arial, Helvetica, sans-serif;
     color: ${props => props.theme.textColor};
     background: ${props => props.theme.background};
     -webkit-font-smoothing: antialiased;
@@ -18,5 +19,13 @@ export default createGlobalStyle`
 
   button {
     cursor: pointer;
+  }
+
+  .bg-primary {
+    background: ${props => props.theme.bluePrimary}
+  }
+
+  .bg-secundary {
+    background: ${props => props.theme.blueSecundary}
   }
 `
