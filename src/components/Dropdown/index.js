@@ -5,9 +5,9 @@ import { Dropdown } from './styles'
 import { FaAngleDown } from 'react-icons/fa'
 
 export default function dropdown (props) {
-  const { label, options } = props
+  const { label, options, ...rest } = props
   return (
-    <Dropdown>
+    <Dropdown {...rest}>
       {label}
       <FaAngleDown />
       <div className='dropdown-content'>

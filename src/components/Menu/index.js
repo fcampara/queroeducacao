@@ -5,22 +5,22 @@ import Dropdown from '../Dropdown'
 import { Container } from './styles'
 
 export default function menu () {
-  const options = [
-    {
-      label: 'Pré-matriculas',
-      value: 0
-    },
-    {
-      label: 'Bolsas favoritas',
-      value: 1
-    }
-  ]
+  const menus = ['Minha Conta', 'Pré-matriculas', 'Bolsas Favoritas']
+  const options = menus.slice(1, Infinity).map((menu, index) => ({
+    label: menu,
+    value: index
+  }))
+
   return (
     <Container>
       <ul>
-        <li>Minha Conta</li>
+        {
+          menus && menus.map(menu => (
+            <li selected={false} key={menu}>{menu}</li>
+          ))
+        }
       </ul>
-      <Dropdown label='Menu' options={options} />
+      <Dropdown className='hide-responsive' label='Menu' options={options} />
     </Container>
   )
 }

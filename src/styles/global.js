@@ -15,7 +15,6 @@ export default createGlobalStyle`
 
   #root {
     height: 100vh;
-    height: 100vh;
     width: 100vw;
     font-family: proxima-nova, Arial, Helvetica, sans-serif;
     color: ${props => props.theme.textColor};
@@ -75,7 +74,7 @@ export default createGlobalStyle`
 
   @media (min-width: ${props => props.theme.mediaQueryMinWidth}) {
     .hide-responsive {
-      display: none;
+      display: none!important;
     }
   }
 `
