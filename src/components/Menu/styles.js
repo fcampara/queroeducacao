@@ -12,10 +12,20 @@ export const Container = styled.section`
     list-style:none;
   }
 
-  ul li {
+  ul li:nth-child(1) {
     display: inline;
+  }
+
+  ul li {
+    display: none;
     color: #fff;
     padding: 10px;
+  }
+
+  @media (min-width: ${props => props.theme.mediaQueryMinWidth}) {
+    ul li {
+      display: inline;
+    }
   }
 `
 
