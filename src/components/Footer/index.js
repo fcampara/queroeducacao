@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { FaRegHeart, FaWhatsapp, FaRegComments, FaRegEnvelope, FaInfoCircle } from 'react-icons/fa'
 
-import { Container, Card } from './style'
+import { Container, Card } from './styles'
 export default class index extends Component {
   render () {
     return (

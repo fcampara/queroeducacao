@@ -96,7 +96,6 @@ export const Container = styled.footer`
 `
 
 export const Card = styled.div`
-  ${props => console.log(props)}
   display: flex;
   color: #FFF;
   align-items: center;
