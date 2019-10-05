@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components'
 
 import Footer from './components/Footer'
 import Header from './components/Header'
+import Menu from './components/Menu'
 
 import Routes from './routes'
 
@@ -21,6 +22,7 @@ function App () {
       <ThemeProvider theme={theme}>
         <BrowserRouter>
           <Header />
+          <Menu />
           <Routes />
           <Footer />
         </BrowserRouter>
