@@ -44,4 +44,12 @@ export default createGlobalStyle`
   .bold {
     font-weight: 900;
   }
+
+  svg.large {
+    font-size: 50px;
+  }
+
+  svg.medium {
+    font-size: 25px;
+  }
 `

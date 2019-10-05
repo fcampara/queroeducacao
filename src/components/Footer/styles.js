@@ -53,14 +53,6 @@ export const Container = styled.footer`
     margin-top: 10px;
   }
 
-  svg.large {
-    font-size: 50px;
-  }
-
-  svg.medium {
-    font-size: 25px;
-  }
-
   @media (min-width: 760px) {
     .title {
       display: none;
