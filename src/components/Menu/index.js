@@ -2,7 +2,7 @@ import React from 'react'
 
 import Dropdown from '../Dropdown'
 
-import { Container } from './styles'
+import { Container, Item } from './styles'
 
 export default function menu () {
   const menus = ['Minha Conta', 'Pré-matriculas', 'Bolsas Favoritas']
@@ -11,12 +11,14 @@ export default function menu () {
     value: index
   }))
 
+  const lastIndex = menus.length - 1
+
   return (
     <Container>
       <ul>
         {
-          menus && menus.map(menu => (
-            <li selected={false} key={menu}>{menu}</li>
+          menus && menus.map((menu, index) => (
+            <Item selected={lastIndex === index} key={menu}>{menu}</Item>
           ))
         }
       </ul>

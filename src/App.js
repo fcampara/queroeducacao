@@ -9,7 +9,7 @@ import Menu from './components/Menu'
 
 import Routes from './routes'
 
-import { theme } from './styles/colors'
+import { theme } from './styles/theme'
 import GlobalStyle from './styles/global'
 
 import './config/ReactotronConfig'

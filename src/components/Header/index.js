@@ -24,7 +24,7 @@ export default function header () {
         </div>
       </div>
       <div className='logo'>
-        <img src={Logo} />
+        <img src={Logo} alt='Quero educação' />
       </div>
       <span className='separator hide-responsive' />
       <div className='account bold'>

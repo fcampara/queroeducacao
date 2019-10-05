@@ -1,4 +1,4 @@
-export const theme = {
+export default {
   bluePrimary: '#18ACC4',
   blueSecundary: '#007A8D',
   yellowPrimary: '#FDCB13',
@@ -6,6 +6,5 @@ export const theme = {
   green: '#0FA866',
   textColor: '#1F2D30',
   background: '#FBFBFB',
-  overlay: '#1F2D30',
-  mediaQueryMinWidth: '780px'
+  overlay: '#1F2D30'
 }

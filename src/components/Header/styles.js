@@ -47,7 +47,8 @@ export const Container = styled.header`
 
   @media (min-width: ${props => props.theme.mediaQueryMinWidth}) {
     margin: 0 80px;
-    grid-template-columns: 15% 1px 35% 140px 40%;
+    grid-template-columns: 15% 1px 30% 140px 45%;
+    font-size: 1.7rem;
 
     .title {
       display: none;
@@ -55,7 +56,7 @@ export const Container = styled.header`
     .text {
       display: block;
     }
-    
+
     .help {
       svg {
         margin-right: 10px;
@@ -73,7 +74,7 @@ export const Container = styled.header`
       align-items: center;
       justify-content: flex-start;
       img {
-        width: 130px;
+        width: 260px;
       }
     }
 

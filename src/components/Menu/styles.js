@@ -10,25 +10,34 @@ export const Container = styled.section`
 
   ul {
     list-style:none;
+    margin-left: 15px;
   }
 
   ul li:nth-child(1) {
     display: inline;
   }
 
-  ul li {
-    display: none;
-    color: #fff;
-    padding: 10px;
-  }
+   @media (min-width: ${props => props.theme.mediaQueryMinWidth}) {
+    height: 75px;
 
-  @media (min-width: ${props => props.theme.mediaQueryMinWidth}) {
-    ul li {
-      display: inline;
+    ul {
+      list-style:none;
+      margin-left: 45px;
     }
-  }
+   }
 `
 
-export const Menu = styled.div`
-  padding: 10px;
+export const Item = styled.li`
+    cursor: pointer;
+    display: none;
+    color: #fff;
+
+    background: ${({ theme, selected }) => selected ? theme.blueSecundary : theme.bluePrimary};
+
+    @media (min-width: ${props => props.theme.mediaQueryMinWidth}) {
+      padding: 20px 50px;
+
+      font-size: 28px;
+      display: inline;
+    }
 `
