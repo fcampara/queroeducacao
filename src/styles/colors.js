@@ -6,5 +6,6 @@ export const theme = {
   green: '#0FA866',
   textColor: '#1F2D30',
   background: '#FBFBFB',
-  overlay: '#1F2D30'
+  overlay: '#1F2D30',
+  mediaQueryMinWidth: '780px'
 }

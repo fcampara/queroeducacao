@@ -53,7 +53,7 @@ export const Container = styled.footer`
     margin-top: 10px;
   }
 
-  @media (min-width: 760px) {
+  @media (min-width: ${props => props.theme.mediaQueryMinWidth}) {
     .title {
       display: none;
     }

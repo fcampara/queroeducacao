@@ -52,4 +52,30 @@ export default createGlobalStyle`
   svg.medium {
     font-size: 35px;
   }
+
+  full-width {
+    width: 100%!important
+  }
+
+  full-heigth {
+    height: 100%!important
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+
+    p:first-child {
+      margin-bottom: 5px;
+    }
+  }
+
+  @media (min-width: ${props => props.theme.mediaQueryMinWidth}) {
+    .hide-responsive {
+      display: none;
+    }
+  }
 `

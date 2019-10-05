@@ -33,21 +33,12 @@ export default function footer () {
         <p className='title'>Ajuda</p>
         <div className='text'>
           <p className='bold'>Central de ajuda</p>
-          <p>Ecnontre todas as respostas</p>
+          <p>Encontre todas as respostas</p>
         </div>
       </Card>
       <Card className='col bold'>
         Feito com <FaRegHeart className='hearth' /> pela Quero Educação
       </Card>
     </Container>
-  // <Section className=''>
-  //   <div className=''>4</div>
-  //   <div className='subgrid'>
-  //     <div>5.1</div>
-  //     <div>5.2</div>
-  //     <div>5.3</div>
-  //   </div>
-  //   <div className=''>6</div>
-  // </Section>
   )
 }
