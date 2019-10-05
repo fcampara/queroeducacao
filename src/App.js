@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 
 import Footer from './components/Footer'
+import Header from './components/Header'
 
 import Routes from './routes'
 
@@ -19,6 +20,7 @@ function App () {
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <BrowserRouter>
+          <Header />
           <Routes />
           <Footer />
         </BrowserRouter>

@@ -50,6 +50,6 @@ export default createGlobalStyle`
   }
 
   svg.medium {
-    font-size: 25px;
+    font-size: 35px;
   }
 `
