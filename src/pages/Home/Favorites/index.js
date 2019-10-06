@@ -8,7 +8,7 @@ export default function favorites () {
     <Container>
       <Favorite className='new'>
         <IoIosAddCircleOutline />
-        <h2>Adicionar curso</h2>
+        <h2>Adicionar bolsa</h2>
         <p>Clique para adicionar bolsas de cursos do seu interesse</p>
       </Favorite>
       <Favorite>
