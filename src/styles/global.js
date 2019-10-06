@@ -13,6 +13,8 @@ export default createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
+  overflow-x: hidden;
+
   #root {
     height: 100vh;
     width: 100vw;
@@ -22,6 +24,11 @@ export default createGlobalStyle`
 
   button {
     cursor: pointer;
+  }
+
+  #main {
+    margin: 20px 15px;
+    min-height: calc(100vh - 503px);
   }
 
   .flex {
@@ -75,6 +82,11 @@ export default createGlobalStyle`
   @media (min-width: ${props => props.theme.mediaQueryMinWidth}) {
     .hide-responsive {
       display: none!important;
+    }
+
+    #main {
+      margin: 60px 100px;
+      min-height: calc(100vh - 620px);
     }
   }
 `

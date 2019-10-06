@@ -22,10 +22,14 @@ function App () {
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <BrowserRouter>
-          <Header />
-          <Menu />
-          <Breadcrumbs />
-          <Routes />
+          <div>
+            <Header />
+            <Menu />
+            <Breadcrumbs />
+          </div>
+          <div id='main'>
+            <Routes />
+          </div>
           <Footer />
         </BrowserRouter>
         <GlobalStyle />

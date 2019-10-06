@@ -4,6 +4,7 @@ export const Container = styled.header`
   display: grid;
   grid-template-columns: 1fr 1px 3fr 1px 1fr;
   color: ${props => props.theme.blueSecundary};
+  margin: 10px auto;
 
   .text {
     display: none;
