@@ -6,6 +6,7 @@ import { ThemeProvider } from 'styled-components'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import Menu from './components/Menu'
+import Breadcrumbs from './components/Breadcrumbs'
 
 import Routes from './routes'
 
@@ -23,6 +24,7 @@ function App () {
         <BrowserRouter>
           <Header />
           <Menu />
+          <Breadcrumbs />
           <Routes />
           <Footer />
         </BrowserRouter>

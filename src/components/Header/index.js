@@ -9,7 +9,7 @@ export default function header () {
   return (
     <Container>
       <div className='help bold'>
-        <FaInfoCircle className='medium' />
+        <FaInfoCircle className='large' />
         <span className='title'>Ajuda</span>
         <div className='text'>
           <p>Como funciona</p>
@@ -17,7 +17,7 @@ export default function header () {
       </div>
       <span className='separator' />
       <div className='whatsapp'>
-        <FaWhatsapp className='medium' />
+        <FaWhatsapp className='large' />
         <div className='text'>
           <p className='bold'>0800 123 2222</p>
           <p>Envie mensagem ou ligue</p>
@@ -32,7 +32,7 @@ export default function header () {
         <div className='text'>
           <p>Nome Sobrenome</p>
         </div>
-        <FaRegUserCircle className='medium' />
+        <FaRegUserCircle className='large' />
       </div>
     </Container>
   )
