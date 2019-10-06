@@ -9,4 +9,8 @@ export const Container = styled.div`
   p {
     font-size: 20px;
   }
+
+  .options {
+    margin-top: 40px;
+  }
 `

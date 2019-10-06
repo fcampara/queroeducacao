@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import Options from './Options'
+import Favorites from './Favorites'
 import { Container } from './styles'
 export default class Home extends Component {
   state = {
@@ -16,6 +17,9 @@ export default class Home extends Component {
         <p>Adicione bolsas de cursos e faculdades do seu interesse e receba atualizações com as melhores ofertas disponíveis.</p>
         <div className='options'>
           <Options options={menus} selected={selected} />
+        </div>
+        <div>
+          <Favorites />
         </div>
       </Container>
     )

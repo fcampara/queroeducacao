@@ -4,6 +4,7 @@ export const Container = styled.div`
   color: ${({ theme }) => theme.blueSecundary};
   margin: 2rem auto;
   display: grid;
+  cursor: pointer;
 
   font-size: 17px;
   font-weight: 900;
