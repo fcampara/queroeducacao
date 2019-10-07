@@ -7,5 +7,5 @@ export default {
   grayLine: '#f3f3f3',
   textColor: '#1F2D30',
   background: '#FBFBFB',
-  overlay: '#1F2D30'
+  overlay: 'rgb(31,45,48, 0.88)'
 }

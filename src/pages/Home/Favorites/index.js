@@ -4,6 +4,8 @@ import { Container, Favorite } from './styles'
 import { IoIosAddCircleOutline } from 'react-icons/io'
 import Rating from '../../../components/Rating'
 
+import Modal from '../../../components/Modal'
+
 import { formatPrice } from '../../../utils/format'
 export default function favorites () {
   const favorite = {
@@ -75,6 +77,7 @@ export default function favorites () {
         <p>Clique para adicionar bolsas de cursos do seu interesse</p>
       </Favorite>
       {createUniversertyCard(favorite)}
+      <Modal />
     </Container>
   )
 }
