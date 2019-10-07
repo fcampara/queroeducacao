@@ -41,11 +41,11 @@ export default function favorites () {
             <img src={university.logo_url} />
             <span className='name capitalize'>{university.name}</span>
             <span className='course'>{course.name}</span>
-            <Rating score={3.8} />
+            <Rating score={university.score} />
           </div>
           <hr />
           <div className='university-period flex column align-center'>
-            <span className='bold capitalize shift'>{course.kind} - {course.shift}</span>
+            <span className='bold capitalize shift'>{course.kind} • {course.shift}</span>
             <span className='period'>Início das aulas em: {infos.start_date}</span>
           </div>
           <hr />
@@ -59,8 +59,8 @@ export default function favorites () {
             </span>
           </div>
           <div className='actions'>
-            <button className='remove'>Excluir</button>
-            <button className='offer'>Ver oferta</button>
+            <button className='primary'>Excluir</button>
+            <button className='yellow'>Ver oferta</button>
           </div>
         </div>
       </Favorite>

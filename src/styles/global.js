@@ -33,6 +33,24 @@ export default createGlobalStyle`
     padding: 0 25px;
     cursor: pointer;
     border-radius: 5px;
+    border-width: 2px;
+  }
+
+  button.primary {
+    color: ${({ theme }) => theme.blueSecundary};
+    background: white;
+    border-color: ${({ theme }) => theme.blueSecundary};
+
+    transition: background 0.2s;
+
+    &:hover {
+      background: #f4fafbf2;
+    }
+  }
+
+  button.yellow {
+    background: ${({ theme }) => theme.yellowPrimary};
+    border-color: ${({ theme }) => theme.yellowSecundary};
   }
 
   #main {
