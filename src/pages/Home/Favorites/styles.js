@@ -8,23 +8,22 @@ export const Container = styled.div`
 
   @media (min-width: ${props => props.theme.mediaQueryMinWidth}) {
     grid-template-rows: 670px;
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    grid-template-columns: repeat(auto-fit, 370px);
   }
 `
 
 export const Favorite = styled.div`
   display: flex;
   text-align: center;
+  justify-content: center;
   flex-direction: column;
   background: white;
-  height: 300px;
-  max-height: 300px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 35px;
 
   @media (min-width: ${props => props.theme.mediaQueryMinWidth}) {
-  height: 600px;
-  max-height: 600px;
+  height: 530px;
+  min-height: 530px;
   }
 
   transition: background 0.2s;
@@ -44,5 +43,62 @@ export const Favorite = styled.div`
     }
 
     align-items: center;
+  }
+
+  .university {
+    height: 100%;
+
+    hr {
+      margin: 25px auto;
+      border-top: 3px solid ${({ theme }) => theme.grayLine};
+      border-left: 0px
+    }
+  }
+
+  .university .university-info {
+    justify-content: center;
+    font-weight: 900;
+    font-size: 20px;
+
+    img {
+      width: 200px;
+      margin-bottom: 30px;
+    }
+
+    .course {
+      color: ${({ theme }) => theme.blueSecundary};
+      margin: 10px auto;
+    }
+
+    .score {
+      margin-top: 8px;
+    }
+  }
+
+  .university .university-period {
+    font-size: 19px;
+    .shift {
+      margin-bottom: 15px;
+    }
+  }
+
+  .university .university-price {
+    margin: 25px auto;
+
+    .title {
+      font-size: 19px;
+      margin-bottom: 15px;
+    }
+
+    .old-value {
+      font-size: 19px;
+      margin-bottom: 5px;
+    }
+
+    .new-value {
+      font-weight: 900;
+      font-size: 27px;
+      color: ${({ theme }) => theme.green}
+    }
   }
 `

@@ -11,9 +11,9 @@ export default createGlobalStyle`
   body {
     background: ${props => props.theme.background};
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
 
-  overflow-x: hidden;
 
   #root {
     height: 100vh;
@@ -23,7 +23,16 @@ export default createGlobalStyle`
   }
 
   button {
+    margin: 4px 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    height: 50px;
+    font-weight: 900;
+    font-size: 20px;
+    padding: 0 25px;
     cursor: pointer;
+    border-radius: 5px;
   }
 
   #main {
@@ -33,6 +42,14 @@ export default createGlobalStyle`
 
   .flex {
     display: flex;
+  }
+
+  .column {
+    flex-direction: column;
+  }
+
+  .align-center {
+    align-items: center;
   }
 
   .bg-primary {
@@ -49,6 +66,14 @@ export default createGlobalStyle`
 
   .bold {
     font-weight: 900;
+  }
+
+  .capitalize {
+    text-transform: uppercase;
+  }
+
+  .line-through {
+    text-decoration: line-through;
   }
 
   svg.large {
