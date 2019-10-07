@@ -2,6 +2,7 @@ import React from 'react'
 
 import { Container, Favorite } from './styles'
 import { IoIosAddCircleOutline } from 'react-icons/io'
+import Rating from '../../../components/Rating'
 
 import { formatPrice } from '../../../utils/format'
 export default function favorites () {
@@ -40,7 +41,7 @@ export default function favorites () {
             <img src={university.logo_url} />
             <span className='name capitalize'>{university.name}</span>
             <span className='course'>{course.name}</span>
-            <span className='score'>{university.score}</span>
+            <Rating score={3.8} />
           </div>
           <hr />
           <div className='university-period flex column align-center'>
