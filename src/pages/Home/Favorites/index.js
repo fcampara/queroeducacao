@@ -38,7 +38,7 @@ export default function favorites () {
       <Favorite className='my-favorite'>
         <div className='university'>
           <div className='university-info flex column align-center'>
-            <img src={university.logo_url} />
+            <img alt='Logo universidade' src={university.logo_url} />
             <span className='name capitalize'>{university.name}</span>
             <span className='course'>{course.name}</span>
             <Rating score={university.score} />
