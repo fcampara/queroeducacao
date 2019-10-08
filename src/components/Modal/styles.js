@@ -1,18 +1,18 @@
 import styled from 'styled-components'
 
 export const Modal = styled.div`
-  display: ${({ visible }) => visible ? 'flex' : 'none'}; /* Hidden by default */
+  display: ${({ visible }) => visible ? 'flex' : 'none'};
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: ${({ theme }) => theme.overlay}; /* Black w/ opacity */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: ${({ theme }) => theme.overlay};
 `
 
 export const Content = styled.div`
