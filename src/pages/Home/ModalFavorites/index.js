@@ -46,13 +46,15 @@ export default function ModalFavorites ({ show, onClose }) {
         <p>Filtre e adicione as bolsas de seu interesse.</p>
       </Header>
       <Filters>
-        <div className='flex'>
+        <div className='city'>
           <Select
             label='Selecione sua cidade'
             options={cities}
             value={city}
             onChange={({ target }) => setCity(target.value)}
           />
+        </div>
+        <div className='course'>
           <Select
             label='Selecione o curso de sua preferência'
             options={courses}
@@ -60,10 +62,13 @@ export default function ModalFavorites ({ show, onClose }) {
             onChange={({ target }) => setCourse(target.value)}
           />
         </div>
-        <div className='flex column'>
-          <span>Como você quer estudar?</span>
-          <div>
+        <div className='who-study flex column'>
+          <span className='bold capitalize'>
+            Como você quer estudar?
+          </span>
+          <div className='flex'>
             <Checkbox
+              className='select-presencial'
               label='Presencial'
               checked={presential}
               onChange={({ target }) => setPresential(target.checked)}
@@ -75,6 +80,7 @@ export default function ModalFavorites ({ show, onClose }) {
             />
           </div>
         </div>
+        <div>range</div>
       </Filters>
       <div className='list'>
         <div className='list-header' />

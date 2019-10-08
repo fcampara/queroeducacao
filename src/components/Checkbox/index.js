@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 
 import { CheckboxContainer, HiddenCheckbox, StyledCheckbox, Icon } from './styles'
 
-export default function Checkbox ({ label, checked, ...props }) {
+export default function Checkbox ({ label, checked, className, ...props }) {
   return (
     <label>
-      <CheckboxContainer>
+      <CheckboxContainer className={className}>
         <HiddenCheckbox checked={checked} {...props} />
         <div className='label'>
           <StyledCheckbox checked={checked}>
