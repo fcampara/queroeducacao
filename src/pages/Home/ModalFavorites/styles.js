@@ -11,6 +11,7 @@ export const Header = styled.div`
 export const Filters = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-gap: 25px;
 
   .who-study span {
     margin-bottom: 1.4rem;

@@ -5,7 +5,7 @@ import { Container, CustomSelect } from './styles'
 export default function Select ({ label, options, onChange }) {
   return (
     <Container>
-      <label className='capitalize'>{label}</label>
+      <label className='bold capitalize'>{label}</label>
       <CustomSelect onChange={element => onChange(element)}>
         <option value='' />
         {options && options.map(option => (

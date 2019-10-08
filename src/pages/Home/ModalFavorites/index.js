@@ -5,6 +5,8 @@ import Modal from '../../../components/Modal'
 import Select from '../../../components/Select'
 import Slider from '../../../components/Slider'
 import Checkbox from '../../../components/Checkbox'
+import Universities from '../Universities'
+
 import { formatPrice } from '../../../utils/format'
 
 import api from '../../../services/api'
@@ -96,9 +98,7 @@ export default function ModalFavorites ({ show, onClose }) {
           />
         </div>
       </Filters>
-      <div className='list'>
-        <div className='list-header' />
-      </div>
+      <Universities />
     </Modal>
   )
 }

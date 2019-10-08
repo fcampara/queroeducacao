@@ -7,7 +7,7 @@ export const Container = styled.div`
   margin: 10px auto;
 
   label {
-    font-size: 13px;
+    font-size: 17px;
     font-weight: 900;
     margin-bottom: 3px;
   }
