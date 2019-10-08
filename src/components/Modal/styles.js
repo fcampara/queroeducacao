@@ -21,7 +21,7 @@ export const Content = styled.div`
   border: 1px solid #888;
   width: calc(100% - 20px);
   @media (min-width: ${props => props.theme.mediaQueryMinWidth}) {
-    width: 80%;
+    width: 60%;
   }
 `
 
@@ -30,11 +30,13 @@ export const Close = styled.div`
   justify-content: flex-end;
   width: 100%;
   margin-bottom: 15px;
-  cursor: pointer;
   z-index: 2;
   color: white;
   font-size: 35px;
+  svg {
+    cursor: pointer;
+  }
   @media (min-width: ${props => props.theme.mediaQueryMinWidth}) {
-    width: calc(80% + 45px);
+    width: calc(60% + 45px);
   }
 `
