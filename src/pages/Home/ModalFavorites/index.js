@@ -1,7 +1,8 @@
 import React from 'react'
-import Modal from '../../../components/Modal'
-
 import propTypes from 'prop-types'
+
+import Modal from '../../../components/Modal'
+import Select from '../../../components/Select'
 
 import { Header, Filters } from './styles'
 
@@ -14,13 +15,11 @@ export default function modalFavorites ({ show, onClose }) {
       </Header>
       <Filters>
         <div className='flex'>
-          <span>Selecione sua cidade</span>
-          <select />
-          <span>Selecione sua cidade</span>
-          <select />
-          <span>Como você quer estudar?</span>
+          <Select label='Selecione sua cidade'/>
+          <Select label='Selecione o curso de sua preferência' />
         </div>
         <div className='flex'>
+          <span>Como você quer estudar?</span>
           <input type='checkbox' /> Presencial
           <input type='checkbox' /> A distância
           <span>Até quanto pode pagar?</span>
