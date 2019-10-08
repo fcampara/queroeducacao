@@ -5,6 +5,7 @@ export const CheckboxContainer = styled.div`
   vertical-align: middle;
 
   .label {
+    font-size: 20px;
     display: flex;
     align-items: center;
   }
@@ -39,7 +40,7 @@ export const StyledCheckbox = styled.div`
   transition: all 150ms;
 
   box-shadow: 0 0 0 ${({ checked }) => checked ? '0px' : '2px'};
-  margin-right: .5rem;
+  margin-right: .8rem;
   ${Icon} {
     visibility: ${props => (props.checked ? 'visible' : 'hidden')}
   }

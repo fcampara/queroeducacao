@@ -7,13 +7,12 @@ export const Container = styled.div`
   margin: 10px auto;
 
   label {
-    font-size: 17px;
+    font-size: 0.8rem;
     font-weight: 900;
     margin-bottom: 3px;
   }
 `
 export const CustomSelect = styled.select`
-  width: 95%;
   font-size: 23px;
   padding: 8px;
   -webkit-appearance: none;

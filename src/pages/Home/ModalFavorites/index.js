@@ -79,7 +79,7 @@ export default function ModalFavorites ({ show, onClose }) {
               onChange={({ target }) => setPresential(target.checked)}
             />
             <Checkbox
-              label='à distância'
+              label='Á distância'
               checked={distance}
               onChange={({ target }) => setDistance(target.checked)}
             />

@@ -10,7 +10,10 @@ export const Header = styled.div`
 
 export const Filters = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
+  @media (min-width: ${props => props.theme.mediaQueryMinWidth}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
   grid-gap: 25px;
 
   .who-study span {

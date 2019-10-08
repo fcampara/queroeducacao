@@ -17,9 +17,9 @@ export const Modal = styled.div`
 
 export const Content = styled.div`
   background-color: #fefefe;
-  padding: 20px;
+  padding: 35px;
   border: 1px solid #888;
-  width: calc(100% - 20px);
+  width: calc(100% - 35px);
   @media (min-width: ${props => props.theme.mediaQueryMinWidth}) {
     width: 60%;
   }
@@ -29,6 +29,7 @@ export const Close = styled.div`
   display: flex;
   justify-content: flex-end;
   width: 100%;
+  margin-top: 270px;
   margin-bottom: 15px;
   z-index: 2;
   color: white;
@@ -37,6 +38,7 @@ export const Close = styled.div`
     cursor: pointer;
   }
   @media (min-width: ${props => props.theme.mediaQueryMinWidth}) {
+    margin-top: 0px;
     width: calc(60% + 45px);
   }
 `
