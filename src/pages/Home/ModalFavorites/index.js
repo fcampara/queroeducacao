@@ -3,26 +3,29 @@ import propTypes from 'prop-types'
 
 import Modal from '../../../components/Modal'
 import Select from '../../../components/Select'
+import Checkbox from '../../../components/Checkbox'
 
 import api from '../../../services/api'
 
 import { Header, Filters } from './styles'
 
 export default function ModalFavorites ({ show, onClose }) {
-  const [ city, setCity] = useState('')
-  const [ course, setCourse] = useState('')
-  const [ cities, setCities] = useState([])
-  const [ courses, setCourses] = useState([])
+  const [city, setCity] = useState('')
+  const [distance, setDistance] = useState(false)
+  const [presential, setPresential] = useState(false)
+  const [course, setCourse] = useState('')
+  const [cities, setCities] = useState([])
+  const [courses, setCourses] = useState([])
 
   useEffect(() => {
-    function loadFilters() {
+    function loadFilters () {
       api('/scholarships').then(({ data }) => {
-        const formatted = data.length && data.reduce((acc, current) => {
+        const formatted = (data.length && data.reduce((acc, current) => {
           const { campus, course } = current
           acc.city.push(campus.city)
           acc.course.push(course.name)
           return acc
-        }, { city: [], course: [] }) || {}
+        }, { city: [], course: [] })) || {}
         const format = element => ({ label: element, value: element })
 
         const filteredCities = [...new Set(formatted.city)].sort().map(format)
@@ -47,19 +50,30 @@ export default function ModalFavorites ({ show, onClose }) {
           <Select
             label='Selecione sua cidade'
             options={cities}
+            value={city}
             onChange={({ target }) => setCity(target.value)}
           />
           <Select
             label='Selecione o curso de sua preferência'
             options={courses}
+            value={course}
             onChange={({ target }) => setCourse(target.value)}
           />
         </div>
-        <div className='flex'>
+        <div className='flex column'>
           <span>Como você quer estudar?</span>
-          <input type='checkbox' /> Presencial
-          <input type='checkbox' /> A distância
-          <span>Até quanto pode pagar?</span>
+          <div>
+            <Checkbox
+              label='Presencial'
+              checked={presential}
+              onChange={({ target }) => setPresential(target.checked)}
+            />
+            <Checkbox
+              label='à distância'
+              checked={distance}
+              onChange={({ target }) => setDistance(target.checked)}
+            />
+          </div>
         </div>
       </Filters>
       <div className='list'>
