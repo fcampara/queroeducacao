@@ -20,9 +20,11 @@ export default function modalFavorites ({ show, onClose }) {
           <select />
           <span>Como você quer estudar?</span>
         </div>
-        <input type='checkbox' />
-        <input type='checkbox' />
-        <span>Até quanto pode pagar?</span>
+        <div className='flex'>
+          <input type='checkbox' /> Presencial
+          <input type='checkbox' /> A distância
+          <span>Até quanto pode pagar?</span>
+        </div>
       </Filters>
       <div className='list'>
         <div className='list-header' />
