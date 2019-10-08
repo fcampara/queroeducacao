@@ -4,7 +4,6 @@ export const Container = styled.div`
   color: ${({ theme }) => theme.blueSecundary};
   margin: 2rem auto;
   display: grid;
-  cursor: pointer;
 
   font-size: 17px;
   font-weight: 900;
@@ -21,6 +20,8 @@ export const Item = styled.div`
   justify-content: center;
   align-items: center;
   padding: 8px;
+
+    cursor: pointer;
 
   background: ${({ theme, selected }) => selected ? theme.blueSecundary : 'white'};
   color: ${({ theme, selected }) => !selected ? theme.blueSecundary : 'white'};

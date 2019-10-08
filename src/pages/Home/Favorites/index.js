@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { Container, Favorite } from './styles'
 import { IoIosAddCircleOutline } from 'react-icons/io'
 import Rating from '../../../components/Rating'
 
-import Modal from '../../../components/Modal'
+import ModalFavorites from '../ModalFavorites'
 
 import { formatPrice } from '../../../utils/format'
-export default function favorites () {
+
+export default function Favorites () {
+  const [show, setShow] = useState(false)
+
   const favorite = {
     full_price: 2139.64,
     formatted_full_price: formatPrice(2139.64),
@@ -71,13 +74,13 @@ export default function favorites () {
 
   return (
     <Container>
-      <Favorite className='new'>
+      <Favorite className='new' onClick={() => setShow(true)}>
         <IoIosAddCircleOutline />
         <h2>Adicionar bolsa</h2>
         <p>Clique para adicionar bolsas de cursos do seu interesse</p>
       </Favorite>
       {createUniversertyCard(favorite)}
-      <Modal />
+      <ModalFavorites show={show} onClose={() => setShow(false)} />
     </Container>
   )
 }
