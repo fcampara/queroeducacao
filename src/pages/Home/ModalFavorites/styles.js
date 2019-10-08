@@ -19,4 +19,10 @@ export const Filters = styled.div`
   .select-presencial {
     margin-right: 3rem;
   }
+
+  .range-price {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: .8rem;
+  }
 `

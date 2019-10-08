@@ -5,12 +5,14 @@ import Modal from '../../../components/Modal'
 import Select from '../../../components/Select'
 import Slider from '../../../components/Slider'
 import Checkbox from '../../../components/Checkbox'
+import { formatPrice } from '../../../utils/format'
 
 import api from '../../../services/api'
 
 import { Header, Filters } from './styles'
 
 export default function ModalFavorites ({ show, onClose }) {
+  const [rangePrice, setRangePrice] = useState(10000)
   const [city, setCity] = useState('')
   const [distance, setDistance] = useState(false)
   const [presential, setPresential] = useState(false)
@@ -81,8 +83,17 @@ export default function ModalFavorites ({ show, onClose }) {
             />
           </div>
         </div>
-        <div>
-          <Slider value={10} />
+        <div className='flex column'>
+          <span className='bold capitalize'>
+            Como você quer estudar?
+          </span>
+          <span className='range-price'>{formatPrice(rangePrice)}</span>
+          <Slider
+            min={100}
+            max={10000}
+            value={rangePrice}
+            onChange={({ target }) => setRangePrice(target.value)}
+          />
         </div>
       </Filters>
       <div className='list'>

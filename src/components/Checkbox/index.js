@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import classNames from 'classnames'
 
 import { CheckboxContainer, HiddenCheckbox, StyledCheckbox, Icon } from './styles'
 
@@ -26,5 +25,5 @@ Checkbox.propTypes = {
   label: PropTypes.string,
   checked: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired,
-  className: classNames
+  className: PropTypes.any
 }
