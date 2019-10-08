@@ -3,6 +3,7 @@ import propTypes from 'prop-types'
 
 import Modal from '../../../components/Modal'
 import Select from '../../../components/Select'
+import Slider from '../../../components/Slider'
 import Checkbox from '../../../components/Checkbox'
 
 import api from '../../../services/api'
@@ -80,7 +81,9 @@ export default function ModalFavorites ({ show, onClose }) {
             />
           </div>
         </div>
-        <div>range</div>
+        <div>
+          <Slider value={10} />
+        </div>
       </Filters>
       <div className='list'>
         <div className='list-header' />
