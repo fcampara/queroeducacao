@@ -1,1 +1,1 @@
-export const baseURL = ' https://testapi.io/api'
+export const baseURL = ' https://testapi.io/api/redealumni'
