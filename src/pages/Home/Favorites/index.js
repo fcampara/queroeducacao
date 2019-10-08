@@ -9,7 +9,7 @@ import ModalFavorites from '../ModalFavorites'
 import { formatPrice } from '../../../utils/format'
 
 export default function Favorites () {
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(true)
 
   const favorite = {
     full_price: 2139.64,
