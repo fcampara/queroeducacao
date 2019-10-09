@@ -122,6 +122,10 @@ export default createGlobalStyle`
     }
   }
 
+  .text-green {
+    color: ${({ theme }) => theme.green};
+  }
+
   @media (min-width: ${props => props.theme.mediaQueryMinWidth}) {
     .hide-responsive {
       display: none!important;

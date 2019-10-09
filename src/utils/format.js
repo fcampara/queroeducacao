@@ -3,6 +3,11 @@ export const { format: formatPrice } = new Intl.NumberFormat('pt-br', {
   currency: 'BRL'
 })
 
+export const onlyDecimal = (price) => {
+  const [decimal] = String(price).split('.')
+  return decimal
+}
+
 export const formatDate = (value) => {
   const isoName = 'pt-br'
   if (value.length < 10) return value

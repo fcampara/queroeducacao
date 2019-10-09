@@ -20,8 +20,10 @@ export const Content = styled.div`
   padding: 35px;
   border: 1px solid #888;
   width: calc(100% - 35px);
+  overflow: auto;
   @media (min-width: ${props => props.theme.mediaQueryMinWidth}) {
     width: 60%;
+    margin-bottom: 50px;
   }
 `
 
@@ -29,8 +31,7 @@ export const Close = styled.div`
   display: flex;
   justify-content: flex-end;
   width: 100%;
-  margin-top: 270px;
-  margin-bottom: 15px;
+  margin: 20px 15px 15px 0px;
   z-index: 2;
   color: white;
   font-size: 35px;
