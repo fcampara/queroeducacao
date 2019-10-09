@@ -22,7 +22,7 @@ export const Content = styled.div`
   width: calc(100% - 35px);
   overflow: auto;
   @media (min-width: ${props => props.theme.mediaQueryMinWidth}) {
-    width: 60%;
+    width: 50vw;
     margin-bottom: 50px;
   }
 `
@@ -40,6 +40,6 @@ export const Close = styled.div`
   }
   @media (min-width: ${props => props.theme.mediaQueryMinWidth}) {
     margin-top: 0px;
-    width: calc(60% + 45px);
+    width: calc(50vw + 65px);
   }
 `

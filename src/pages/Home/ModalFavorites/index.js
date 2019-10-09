@@ -11,7 +11,7 @@ import { formatPrice } from '../../../utils/format'
 
 import api from '../../../services/api'
 
-import { Header, Filters } from './styles'
+import { Header, Filters, Actions } from './styles'
 
 export default function ModalFavorites ({ show, onClose }) {
   const [rangePrice, setRangePrice] = useState(10000)
@@ -21,6 +21,7 @@ export default function ModalFavorites ({ show, onClose }) {
   const [course, setCourse] = useState('')
   const [cities, setCities] = useState([])
   const [courses, setCourses] = useState([])
+  const [favorites, setFavorites] = useState([])
 
   useEffect(() => {
     function loadFilters () {
@@ -87,18 +88,26 @@ export default function ModalFavorites ({ show, onClose }) {
         </div>
         <div className='flex column'>
           <span className='bold capitalize'>
-            Como você quer estudar?
+            Até quanto pode pagar?
           </span>
           <span className='range-price'>{formatPrice(rangePrice)}</span>
           <Slider
             min={100}
             max={10000}
-            value={rangePrice}
+            value={Number(rangePrice)}
             onChange={({ target }) => setRangePrice(target.value)}
           />
         </div>
       </Filters>
-      <Universities />
+      <Universities
+        favorites={favorites}
+        onChange={(data) => setFavorites(data)}
+        filter={{ city, distance, presential, course, rangePrice }}
+      />
+      <Actions>
+        <button onClick={() => onClose()} className='primary'>Cancelar</button>
+        <button disabled={!favorites.length}>Adicionar Bolsa(s)</button>
+      </Actions>
     </Modal>
   )
 }

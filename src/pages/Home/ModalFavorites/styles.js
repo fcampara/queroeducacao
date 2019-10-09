@@ -30,3 +30,8 @@ export const Filters = styled.div`
     margin-bottom: .8rem;
   }
 `
+
+export const Actions = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`
