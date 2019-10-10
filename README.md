@@ -4,7 +4,7 @@
 
 - [React](https://pt-br.reactjs.org/)
 - [Styled Components](https://www.styled-components.com/)
-- [Cypress.io]((https://www.cypress.io/))
+- [Cypress.io](https://www.cypress.io/)
 
 ## Executando o projeto
 
