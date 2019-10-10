@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
+
 import { useSelector, useDispatch } from 'react-redux'
 import { Container, Favorite } from './styles'
 import { IoIosAddCircleOutline } from 'react-icons/io'
@@ -7,17 +9,29 @@ import Rating from '../../../components/Rating'
 import * as favoriteActions from '../../../store/modules/favorite/actions'
 import ModalFavorites from '../ModalFavorites'
 
-export default function Favorites () {
+export default function Favorites ({ semester }) {
   const dispatch = useDispatch()
   const [show, setShow] = useState(false)
   const listFavorites = useSelector(state => state.favorite.list)
+  const [filteredListFavorites, setFilteredListFavorites] = useState([])
+
+  useEffect(() => {
+    const filteredList = listFavorites.filter(({ enrollment_semester }) => {
+      if (!semester) return true
+      if (semester === 1 && enrollment_semester === '2019.2') return true
+      if (semester === 2 && enrollment_semester === '2020.1') return true
+      return false
+    })
+
+    setFilteredListFavorites(filteredList)
+  }, [listFavorites, semester])
 
   function deleteFavorite (index) {
     dispatch(favoriteActions.deleteFavorite(index))
   }
 
   const createUniversertyCard = (favorite, index) => {
-    const { course, university, campus, ...infos } = favorite
+    const { course, university, ...infos } = favorite
 
     return (
       <Favorite key={index} className='my-favorite'>
@@ -70,11 +84,15 @@ export default function Favorites () {
         <p>Clique para adicionar bolsas de cursos do seu interesse</p>
       </Favorite>
       {
-        listFavorites && listFavorites.map((favorite, index) => (
+        filteredListFavorites && filteredListFavorites.map((favorite, index) => (
           createUniversertyCard(favorite, index)
         ))
       }
       <ModalFavorites show={show} onClose={() => setShow(false)} />
     </Container>
   )
+}
+
+Favorites.propTypes = {
+  semester: PropTypes.number.isRequired
 }
