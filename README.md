@@ -12,7 +12,7 @@ Pré requisitos
 
 - [Node.js](https://nodejs.org/en/download/)
 
-Para executar o projeto é necessário ter todos os pré requisitos, após a instalação de todos basta acessar a pasta raiz do projeto e executar o comando os seguintes comandos
+Para executar o projeto é necessário ter todos os pré requisitos, após a instalação de todos basta acessar a pasta raiz do projeto e executar os seguintes comandos
 
 ```bash
   npm install
