@@ -34,4 +34,8 @@ export const Filters = styled.div`
 export const Actions = styled.div`
   display: flex;
   justify-content: flex-end;
+  
+  .yellow {
+    margin-left: 8px;
+  }
 `
