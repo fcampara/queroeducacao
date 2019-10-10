@@ -13,8 +13,6 @@ import Routes from './routes'
 import { theme } from './styles/theme'
 import GlobalStyle from './styles/global'
 
-import './config/ReactotronConfig'
-
 import store from './store'
 
 function App () {
