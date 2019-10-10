@@ -22,13 +22,13 @@ export default function Universities ({ filter, onChange }) {
       })
     }
     loadUniversities()
-  }, [filter])
+  }, [])
 
   useEffect(() => {
     function fillMyList (data) {
       const filtered = data.filter((university) => {
         let isValid = true
-        const { city, distance, presential, campus, course, rangePrice } = filter
+        const { city, distance, presential, course, rangePrice } = filter
         if (city && university.campus.city !== city) isValid = false
         if (distance && university.course.kind !== 'EaD') isValid = false
         if (presential && university.course.kind !== 'Presencial') isValid = false
@@ -117,7 +117,7 @@ export default function Universities ({ filter, onChange }) {
   )
 }
 
-Universities.propType = {
+Universities.propTypes = {
   filter: PropTypes.objectOf({
     city: PropTypes.string,
     distance: PropTypes.bool,
