@@ -74,7 +74,7 @@ export default function Universities ({ filter, onChange }) {
           <Fragment key={index}>
             <Card>
               <div>
-                <Checkbox checked={!!selected[index]} onChange={() => handleSelect(index)} />
+                <Checkbox data-cy={`checkbox-${index}`} checked={!!selected[index]} onChange={() => handleSelect(index)} />
               </div>
               <div>
                 <img alt='Logo universidade' src={university.logo_url} />
@@ -118,12 +118,6 @@ export default function Universities ({ filter, onChange }) {
 }
 
 Universities.propTypes = {
-  filter: PropTypes.objectOf({
-    city: PropTypes.string,
-    distance: PropTypes.bool,
-    presential: PropTypes.bool,
-    course: PropTypes.string,
-    rangePrice: PropTypes.string
-  }).isRequired,
+  filter: PropTypes.object.isRequired,
   onChange: PropTypes.func.isRequired
 }

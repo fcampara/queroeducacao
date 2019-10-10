@@ -14,7 +14,7 @@ export default function Home () {
   const [selected, setSelected] = useState(0)
 
   return (
-    <Container>
+    <Container data-cy='home'>
       <h1>Bolsas favoritas</h1>
       <p>Adicione bolsas de cursos e faculdades do seu interesse e receba atualizações com as melhores ofertas disponíveis.</p>
       <div className='options'>

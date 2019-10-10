@@ -5,7 +5,7 @@ import { CheckboxContainer, HiddenCheckbox, StyledCheckbox, Icon } from './style
 
 export default function Checkbox ({ label, checked, className, ...props }) {
   return (
-    <label>
+    <label data-cy={`label-${props['data-cy']}`}>
       <CheckboxContainer className={className}>
         <HiddenCheckbox checked={checked} {...props} />
         <div className='label'>
@@ -25,5 +25,6 @@ Checkbox.propTypes = {
   label: PropTypes.string,
   checked: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired,
-  className: PropTypes.any
+  className: PropTypes.any,
+  'data-cy': PropTypes.string
 }

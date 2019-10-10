@@ -6,7 +6,7 @@ import { Container, List } from './styles'
 export default function breadcrumbs () {
   const pages = ['Home', 'Minha conta', 'Bolsas favoritas']
   return (
-    <Container>
+    <Container data-cy='breadcrumbs'>
       <List>
         {
           pages && pages.map(page => (

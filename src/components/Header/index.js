@@ -7,7 +7,7 @@ import { Container } from './styles'
 
 export default function header () {
   return (
-    <Container>
+    <Container data-cy='header'>
       <div className='help bold'>
         <FaInfoCircle className='large' />
         <span className='title'>Ajuda</span>

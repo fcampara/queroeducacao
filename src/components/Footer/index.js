@@ -4,7 +4,7 @@ import { FaRegHeart, FaWhatsapp, FaRegComments, FaRegEnvelope, FaInfoCircle } fr
 import { Container, Card } from './styles'
 export default function footer () {
   return (
-    <Container>
+    <Container data-cy='footer'>
       <Card className='col bg-secundary'>
         <FaWhatsapp className='large' />
         <div className='row'>

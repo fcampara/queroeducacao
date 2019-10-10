@@ -14,7 +14,7 @@ export default function menu () {
   const lastIndex = menus.length - 1
 
   return (
-    <Container>
+    <Container data-cy='menu'>
       <ul>
         {
           menus && menus.map((menu, index) => (

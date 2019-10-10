@@ -63,6 +63,7 @@ export default function ModalFavorites ({ show, onClose }) {
       <Filters>
         <div className='city'>
           <Select
+            data-cy='city'
             label='Selecione sua cidade'
             options={cities}
             value={city}
@@ -71,6 +72,7 @@ export default function ModalFavorites ({ show, onClose }) {
         </div>
         <div className='course'>
           <Select
+            data-cy='course'
             label='Selecione o curso de sua preferência'
             options={courses}
             value={course}
@@ -83,12 +85,14 @@ export default function ModalFavorites ({ show, onClose }) {
           </span>
           <div className='flex'>
             <Checkbox
+              data-cy='checkbox-presencial'
               className='select-presencial'
               label='Presencial'
               checked={presential}
               onChange={({ target }) => setPresential(target.checked)}
             />
             <Checkbox
+              data-cy='checkbox-distance'
               label='Á distância'
               checked={distance}
               onChange={({ target }) => setDistance(target.checked)}
@@ -101,6 +105,7 @@ export default function ModalFavorites ({ show, onClose }) {
           </span>
           <span className='range-price'>{formatPrice(rangePrice)}</span>
           <Slider
+            data-cy='price'
             min={100}
             max={10000}
             value={Number(rangePrice)}

@@ -2,9 +2,9 @@ import React from 'react'
 import proptypes from 'prop-types'
 import { Container, CustomSelect } from './styles'
 
-export default function Select ({ label, options, onChange }) {
+export default function Select ({ label, options, onChange, ...props }) {
   return (
-    <Container>
+    <Container {...props}>
       <label className='bold capitalize'>{label}</label>
       <CustomSelect onChange={element => onChange(element)}>
         <option value='' />

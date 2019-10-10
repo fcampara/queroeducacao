@@ -6,7 +6,7 @@ import { Container } from './styles'
 export default function Slider (props) {
   const { min = 1, max = 100, value = 1, onChange } = props
   return (
-    <Container>
+    <Container {...props}>
       <input
         className='slider'
         type='range'

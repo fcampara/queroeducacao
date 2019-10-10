@@ -6,7 +6,7 @@ import { Modal, Content, Close } from './styles'
 export default function modal (props) {
   const { onClose, visible, children } = props
   return (
-    <Modal visible={visible}>
+    <Modal data-cy='modal' visible={visible}>
       <Close>
         <FaTimes onClick={() => onClose()} />
       </Close>

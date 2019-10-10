@@ -34,7 +34,7 @@ export default function Favorites ({ semester }) {
     const { course, university, ...infos } = favorite
 
     return (
-      <Favorite key={index} className='my-favorite'>
+      <Favorite data-cy={`favorite-${index}`} key={index} className='my-favorite'>
         <div className='university'>
           <div className='university-info flex column align-center'>
             <img alt='Logo universidade' src={university.logo_url} />
@@ -59,6 +59,7 @@ export default function Favorites ({ semester }) {
           </div>
           <div className='actions'>
             <button
+              data-cy='btn-remove'
               className='primary'
               onClick={() => deleteFavorite(index)}
             >
@@ -78,7 +79,7 @@ export default function Favorites ({ semester }) {
 
   return (
     <Container>
-      <Favorite className='new' onClick={() => setShow(true)}>
+      <Favorite data-cy='new-favorite' className='new' onClick={() => setShow(true)}>
         <IoIosAddCircleOutline />
         <h2>Adicionar bolsa</h2>
         <p>Clique para adicionar bolsas de cursos do seu interesse</p>
