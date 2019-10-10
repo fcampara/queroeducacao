@@ -23,7 +23,7 @@ Após a finalização a projeto estará sendo executado na porta 3000 (caso não
 
 ## Executando o test
 
-Foi desenvolvido teste de integração utilizando a ferramenta [Cypress.io](https://www.cypress.io/) para executar o teste para executar o seguinte comando
+Foi desenvolvido teste de integração utilizando a ferramenta [Cypress.io](https://www.cypress.io/) para executar o teste basta executar o seguinte comando
 
 ```bash
   npm run test
