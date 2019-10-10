@@ -1,29 +1,27 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
+export const Container = styled.ul`
   display: grid;
   grid-gap: 20px;
   grid-template-rows: 370px;
   grid-template-columns: repeat(auto-fit, 1fr);
+  list-style: none;
 
   @media (min-width: ${props => props.theme.mediaQueryMinWidth}) {
     grid-template-rows: 670px;
-    grid-template-columns: repeat(auto-fit, 370px);
+    grid-template-columns: repeat(auto-fit, 390px);
   }
 `
 
-export const Favorite = styled.div`
-  display: flex;
+export const Favorite = styled.li`
   text-align: center;
-  justify-content: center;
-  flex-direction: column;
   background: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 35px;
+  overflow: auto;
 
   @media (min-width: ${props => props.theme.mediaQueryMinWidth}) {
-  height: 530px;
-  min-height: 530px;
+    min-height: 530px;
   }
 
   transition: background 0.2s;
@@ -33,6 +31,9 @@ export const Favorite = styled.div`
   }
 
   &.new {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     cursor: pointer;
     line-height: 2rem;
     justify-content: center;
@@ -46,10 +47,13 @@ export const Favorite = styled.div`
   }
 
   .university {
+    display: flex;
+    flex-direction: column;
     height: 100%;
 
     hr {
       margin: 25px auto;
+      width: 100%;
       border-top: 3px solid ${({ theme }) => theme.grayLine};
       border-left: 0px
     }
@@ -59,9 +63,11 @@ export const Favorite = styled.div`
     justify-content: center;
     font-weight: 900;
     font-size: 20px;
+    margin-bottom: auto;
 
     img {
-      width: 200px;
+      max-width: 180px;
+      height: auto;
       margin-bottom: 30px;
     }
 
@@ -100,5 +106,10 @@ export const Favorite = styled.div`
       font-size: 27px;
       color: ${({ theme }) => theme.green}
     }
+  }
+
+  .actions {
+    display: flex;
+    justify-content: space-between;
   }
 `

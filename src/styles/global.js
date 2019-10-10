@@ -23,7 +23,7 @@ export default createGlobalStyle`
   }
 
   button {
-    margin: 4px 4px;
+    margin: 4px 0px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -44,13 +44,22 @@ export default createGlobalStyle`
     transition: background 0.2s;
 
     &:hover {
-      background: #f4fafbf2;
+      background: #f4fafbf2!important
     }
   }
 
   button.yellow {
+    transition: background 0.2s;
+
     background: ${({ theme }) => theme.yellowPrimary};
     border-color: ${({ theme }) => theme.yellowSecundary};
+  }
+
+  button:disabled {
+    transition: background 0.2s;
+
+    background: ${({ theme }) => theme.disabledButton};
+    border-color: #9c9c9c;
   }
 
   #main {

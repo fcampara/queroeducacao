@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-
 import Options from './Options'
 import Favorites from './Favorites'
 import { Container } from './styles'

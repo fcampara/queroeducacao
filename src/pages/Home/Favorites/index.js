@@ -1,52 +1,32 @@
 import React, { useState } from 'react'
-
+import { useSelector, useDispatch } from 'react-redux'
 import { Container, Favorite } from './styles'
 import { IoIosAddCircleOutline } from 'react-icons/io'
 import Rating from '../../../components/Rating'
 
+import * as favoriteActions from '../../../store/modules/favorite/actions'
 import ModalFavorites from '../ModalFavorites'
 
-import { formatPrice } from '../../../utils/format'
-
 export default function Favorites () {
-  const [show, setShow] = useState(true)
+  const dispatch = useDispatch()
+  const [show, setShow] = useState(false)
+  const listFavorites = useSelector(state => state.favorite.list)
 
-  const favorite = {
-    full_price: 2139.64,
-    formatted_full_price: formatPrice(2139.64),
-    price_with_discount: 706.08,
-    formatted_price_with_discount: formatPrice(706.08),
-    discount_percentage: 67,
-    start_date: '01/08/2019',
-    enrollment_semester: '2019.2',
-    enabled: true,
-    course: {
-      name: 'Engenharia Mecânica',
-      kind: 'Presencial',
-      level: 'Bacharelado',
-      shift: 'Noite'
-    },
-    university: {
-      name: 'UNIP',
-      score: 4.5,
-      logo_url: 'https://www.tryimg.com/u/2019/04/16/unip.png'
-    },
-    campus: {
-      name: 'Jardim das Indústrias',
-      city: 'São José dos Campos'
-    }
+  function deleteFavorite (index) {
+    dispatch(favoriteActions.deleteFavorite(index))
   }
 
-  const createUniversertyCard = (favorite) => {
+  const createUniversertyCard = (favorite, index) => {
     const { course, university, campus, ...infos } = favorite
+
     return (
-      <Favorite className='my-favorite'>
+      <Favorite key={index} className='my-favorite'>
         <div className='university'>
           <div className='university-info flex column align-center'>
             <img alt='Logo universidade' src={university.logo_url} />
             <span className='name capitalize'>{university.name}</span>
             <span className='course'>{course.name}</span>
-            <Rating score={university.score} />
+            <Rating className='rating' score={university.score} />
           </div>
           <hr />
           <div className='university-period flex column align-center'>
@@ -64,8 +44,18 @@ export default function Favorites () {
             </span>
           </div>
           <div className='actions'>
-            <button className='primary'>Excluir</button>
-            <button className='yellow'>Ver oferta</button>
+            <button
+              className='primary'
+              onClick={() => deleteFavorite(index)}
+            >
+              Excluir
+            </button>
+            <button
+              className='yellow'
+              disabled={!infos.enabled}
+            >
+              {!infos.enabled ? 'Indisponível' : 'Ver oferta'}
+            </button>
           </div>
         </div>
       </Favorite>
@@ -79,7 +69,11 @@ export default function Favorites () {
         <h2>Adicionar bolsa</h2>
         <p>Clique para adicionar bolsas de cursos do seu interesse</p>
       </Favorite>
-      {createUniversertyCard(favorite)}
+      {
+        listFavorites && listFavorites.map((favorite, index) => (
+          createUniversertyCard(favorite, index)
+        ))
+      }
       <ModalFavorites show={show} onClose={() => setShow(false)} />
     </Container>
   )

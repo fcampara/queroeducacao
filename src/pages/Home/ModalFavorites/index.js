@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import propTypes from 'prop-types'
 
 import Modal from '../../../components/Modal'
@@ -13,7 +14,10 @@ import api from '../../../services/api'
 
 import { Header, Filters, Actions } from './styles'
 
+import * as FavoriteActions from '../../../store/modules/favorite/actions'
+
 export default function ModalFavorites ({ show, onClose }) {
+  const dispatch = useDispatch()
   const [rangePrice, setRangePrice] = useState(10000)
   const [city, setCity] = useState('')
   const [distance, setDistance] = useState(false)
@@ -22,6 +26,11 @@ export default function ModalFavorites ({ show, onClose }) {
   const [cities, setCities] = useState([])
   const [courses, setCourses] = useState([])
   const [favorites, setFavorites] = useState([])
+
+  function handleSelected () {
+    dispatch(FavoriteActions.addFavorites(favorites))
+    onClose()
+  }
 
   useEffect(() => {
     function loadFilters () {
@@ -99,14 +108,23 @@ export default function ModalFavorites ({ show, onClose }) {
           />
         </div>
       </Filters>
-      <Universities
-        favorites={favorites}
-        onChange={(data) => setFavorites(data)}
-        filter={{ city, distance, presential, course, rangePrice }}
-      />
+      {
+        show &&
+          <Universities
+            favorites={favorites}
+            onChange={(data) => setFavorites(data)}
+            filter={{ city, distance, presential, course, rangePrice }}
+          />
+      }
       <Actions>
         <button onClick={() => onClose()} className='primary'>Cancelar</button>
-        <button disabled={!favorites.length}>Adicionar Bolsa(s)</button>
+        <button
+          disabled={!favorites.length}
+          className='yellow'
+          onClick={() => handleSelected()}
+        >
+          Adicionar Bolsa(s)
+        </button>
       </Actions>
     </Modal>
   )

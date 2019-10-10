@@ -28,8 +28,8 @@ export default function Universities ({ filter, onChange }) {
     function fillMyList (data) {
       const filtered = data.filter((university) => {
         let isValid = true
-        const { city, distance, presential, course, rangePrice } = filter
-        if (city && university.city !== city) isValid = false
+        const { city, distance, presential, campus, course, rangePrice } = filter
+        if (city && university.campus.city !== city) isValid = false
         if (distance && university.course.kind !== 'EaD') isValid = false
         if (presential && university.course.kind !== 'Presencial') isValid = false
         if (course && university.course.name !== course) isValid = false
